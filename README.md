@@ -24,12 +24,16 @@ The experiment combines API-based microscope control, automated image acquisitio
 Provides the graphical user interface (GUI) through which the user interacts with the system. It manages user interaction, audio acquisition, and speech recognition. 
 
 ## System Workflow
-The main interaction loop connects the five components as follows:
-1. First, the user activates audio recording by pressing the space bar through ASRToDictionaryWhisperSpaceBarGUI.py, where Whisper transcribes the recorded audio into text.
-2. Second, connection is stablished through InitialConnection.py
-3. Third, DictionaryCode.py interprets the recognized commands and determines the corresponding microscope action.
-4. Fourth, such microscopes actions are extracted from ScriptsToFunctions.py
-5. Finally, SpectralDetectorOptimizationExperiment.py extends the system beyond simple command execution by implementing an automated microscopy workflow based on image analysis and iterative decision-making. 
+The graphical interface (ASRToDictionaryWhisperSpaceBarGUI.py) acts as the entry point to the system and coordinates the execution of voice commands through the following workflow:
+
+1. Audio acquisition: The user presses the spacebar to record a voice command.
+2. Speech recognition: OpenAI Whisper transcribes the recorded audio into text.
+3. API connection: InitialConnection.py provides the connection to the Leica LAS X API.
+4. Command interpretation: DictionaryCode.py processes the recognized text and identifies the corresponding microscope operation.
+5. Function execution: ScriptsToFunctions.py provides the function associated with the requested action, which is executed through the LAS X API.
+6. Return to the interface: Once command processing finishes, the interface can receive the next user command, repeating the interaction cycle.
+
+The spectral detector optimization experiment is a specialized workflow implemented in SpectralDetectorOptimizationExperiment.py. When invoked, it automates the adjustment of the detector configuration, image acquisition, and quantitative comparison of successive images using SSIM. The results guide the algorithm's decision to continue optimization or revert to a previously valid configuration when the stopping criterion is reached. This workflow extends the system from direct voice-controlled operations to automated experimental execution based on image analysis and iterative decision-making
 
 ## Requirements and Configuration
 Operation requires compatible Leica LAS X software, the appropriate API connector, and access to compatible microscopy equipment or a supported development environment.
