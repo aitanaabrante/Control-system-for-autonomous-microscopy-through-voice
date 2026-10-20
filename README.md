@@ -8,8 +8,8 @@ The software is organized into five main components, separating API communicatio
 
 ## Software Architecture
 The system follows a modular architecture in which the graphical interface coordinates the workflow and delegates command interpretation and execution to specialized modules.
-1. InitialConnection.py:
-2. DictionaryCode.py
-3. ScriptsToFunctions.py
-4. SpectralDetectorOptimizationExperiment.py
-5. ASRToDictionaryWhisperSpaceBarGUI.py
+### 1. InitialConnection.py:
+### 2. DictionaryCode.py
+### 3. ScriptsToFunctions.py
+### 4. SpectralDetectorOptimizationExperiment.py
+### 5. ASRToDictionaryWhisperSpaceBarGUI.py
