@@ -25,5 +25,8 @@ Provides the graphical user interface (GUI) through which the user interacts wit
 
 ## System Workflow
 The main interaction loop connects the five components as follows:
-1. First, the user activates audio recording by pressing the space bar through #### ASRToDictionaryWhisperSpaceBarGUI.py. Whisper
-3. 
+1. First, the user activates audio recording by pressing the space bar through ASRToDictionaryWhisperSpaceBarGUI.py, where Whisper transcribes the recorded audio into text.
+2. Second, connection is stablished through InitialConnection.py
+3. Third, DictionaryCode.py interprets the recognized commands and determines the corresponding microscope action.
+4. Fourth, such microscopes actions are extracted from ScriptsToFunctions.py
+5. Finally, SpectralDetectorOptimizationExperiment.py extends the system beyond simple command execution by implementing an automated microscopy workflow based on image analysis and iterative decision-making. 
