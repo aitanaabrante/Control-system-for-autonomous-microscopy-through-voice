@@ -30,3 +30,6 @@ The main interaction loop connects the five components as follows:
 3. Third, DictionaryCode.py interprets the recognized commands and determines the corresponding microscope action.
 4. Fourth, such microscopes actions are extracted from ScriptsToFunctions.py
 5. Finally, SpectralDetectorOptimizationExperiment.py extends the system beyond simple command execution by implementing an automated microscopy workflow based on image analysis and iterative decision-making. 
+
+## Requirements and Configuration
+Operation requires compatible Leica LAS X software, the appropriate API connector, and access to compatible microscopy equipment or a supported development environment.
