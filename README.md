@@ -21,4 +21,9 @@ The experiment iteratively modifies the spectral detector configuration, acquire
 
 The experiment combines API-based microscope control, automated image acquisition, quantitative image analysis, and decision-making based on experimental results.
 #### 5. ASRToDictionaryWhisperSpaceBarGUI.py
-Provides the graphical user interface (GUI) through which the user interacts with the system.
+Provides the graphical user interface (GUI) through which the user interacts with the system. It manages user interaction, audio acquisition, and speech recognition. 
+
+## System Workflow
+The main interaction loop connects the five components as follows:
+1. First, the user activates audio recording by pressing the space bar through #### ASRToDictionaryWhisperSpaceBarGUI.py. Whisper
+3. 
