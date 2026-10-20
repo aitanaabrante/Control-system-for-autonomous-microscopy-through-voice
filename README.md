@@ -8,8 +8,17 @@ The software is organized into five main components, separating API communicatio
 
 ## Software Architecture
 The system follows a modular architecture in which the graphical interface coordinates the workflow and delegates command interpretation and execution to specialized modules.
-#### 1. InitialConnection.py:
+#### 1. InitialConnection.py
+Establishes and maintains communication between Python and the Leica LAS X API through the API connector. This component provides the connection required by the other modules to interact with LAS X, avoiding the need to establish a separate connection for each microscope operation.
 #### 2. DictionaryCode.py
+Interprets the transcribed voice commands and maps them to the corresponding predefined microscope actions. This module acts as the intermediate layer between the graphical interface and the executable microscope functions, separating natural-language input from the underlying implementation.
 #### 3. ScriptsToFunctions.py
+Contains the executable functions responsible for performing microscope operations through the LAS X API. The command interpretation module delegates the requested actions to this component, which communicates with LAS X to execute the corresponding operations.
 #### 4. SpectralDetectorOptimizationExperiment.py
+Implements an automated microscopy experiment that extends the system beyond individual voice-command execution.
+
+The experiment iteratively modifies the spectral detector configuration, acquires images, and evaluates image similarity using the Structural Similarity Index Measure (SSIM). By comparing consecutive images, the algorithm identifies changes consistent with spectral contamination and can revert to a previously valid configuration when the similarity falls below the defined threshold.
+
+The experiment combines API-based microscope control, automated image acquisition, quantitative image analysis, and decision-making based on experimental results.
 #### 5. ASRToDictionaryWhisperSpaceBarGUI.py
+Provides the graphical user interface (GUI) through which the user interacts with the system.
